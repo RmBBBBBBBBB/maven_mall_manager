@@ -9,7 +9,6 @@
 <html>
 <head>
 <base href="<%=basePath %>" />
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	// 取得一级分类的json静态数据

@@ -9,7 +9,6 @@
 <html>
 <head>
 <base href="<%=basePath %>" />
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		// 取得一级分类的json静态数据
@@ -44,9 +43,9 @@
 	
 	function attr_open_add_attr(){
 		var class_2_id = $("#attr_class_2_select").val();
-		var class_2_name = $("#attr_class_2_select option:selected").html();
-		alert(class_2_id+class_2_name);
-		window.open("goto_add_attr/"+class_2_id+"/"+class_2_name+".do");
+		var class_2_name = $("#attr_class_2_select option:selected").html();		
+		//window.open("goto_add_attr/"+class_2_id+"/"+class_2_name+".do");
+		index_add_tabs2("添加分类属性","goto_add_attr/"+class_2_id+"/"+class_2_name+".do");
 	}
 	
 </script>

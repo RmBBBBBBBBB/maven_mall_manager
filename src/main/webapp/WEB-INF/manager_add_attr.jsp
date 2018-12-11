@@ -9,7 +9,6 @@
 <html>
 <head>
 <base href="<%=basePath %>" />
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
     var add_attr_table_index = 0;
 	function add_attr_add_table(){

@@ -9,7 +9,6 @@
 <html>
 <head>
 <base href="<%=basePath %>" />
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		// 取得一级分类的json静态数据
@@ -84,21 +83,27 @@
 <title>商品信息发布</title>
 </head>
 <body>
-	${success}:商品信息发布<br>
 	
-	<form action="spu_publish.do" enctype="multipart/form-data" method="post">
-		一级分类：<select name="flbh1" id="spu_class_1_select" onChange="spu_select_class_2_by_class_1(this.value)"></select><br>
-		二级分类：<select name="flbh2" id="spu_class_2_select" ></select><br>
-		商标分类：<select name="pp_id" id="spu_tm_select" ></select><br>
-		<hr>
-		商品spu名称：<input type="text" name="shp_mch"/><br>
-		商品spu描述：<input type="text" name="shp_msh"/><br>
-		商品图片组：<br>
-		<div id="spu_image_div">
-			<img id="spu_image_0" width="100px" onclick="spu_image_click(0)" src = "image/upload_hover.png" style="cursor:pointer;"/>
-			<input style="display:none;" id="spu_file_0" type="file" name="files" onChange="spu_image_change(0)" /><br>
+	<div class="easyui-layout" data-options="fit:true">
+		<div data-options="region:'west',split:true" style="width:300px">
+			&nbsp;&nbsp;&nbsp;&nbsp;${success}:商品信息发布<br>
+			一级分类：<select name="flbh1" id="spu_class_1_select" onChange="spu_select_class_2_by_class_1(this.value)"></select><br>
+			二级分类：<select name="flbh2" id="spu_class_2_select" ></select><br>
+			商标分类：<select name="pp_id" id="spu_tm_select" ></select><br>
 		</div>
-		<input type="submit" value="发布spu信息"/>
-	</form>
+		<div data-options="region:'center'">
+		<form action="spu_publish.do" enctype="multipart/form-data" method="post">
+					商品spu名称：<input type="text" name="shp_mch"/><br>
+					商品spu描述：<input type="text" name="shp_msh"/><br>
+					商品图片组：<br>
+			<div id="spu_image_div">
+				<img id="spu_image_0" width="100px" onclick="spu_image_click(0)" src = "image/upload_hover.png" style="cursor:pointer;"/>
+				<input style="display:none;" id="spu_file_0" type="file" name="files" onChange="spu_image_change(0)" /><br>
+			</div>
+			<input type="submit" value="发布spu信息"/>
+		</form>
+		</div>
+	</div>
+
 </body>
 </html>
