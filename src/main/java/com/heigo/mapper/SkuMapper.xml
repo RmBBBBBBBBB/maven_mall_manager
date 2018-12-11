@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.heigo.mapper.SkuMapper">
+	
+	<select id="select_spu_by_ppid_class2id" parameterType="Map" resultType="com.heigo.bean.T_MALL_PRODUCT">
+		select * from t_mall_product
+		<where>
+			<if test="class_1_id != 0">
+				and flbh1=#{class_1_id}
+			</if>
+			<if test="class_2_id != 0">
+				and flbh2=#{class_2_id}
+			</if>
+			<if test="pp_id != 0">
+				and pp_id=#{pp_id}
+			</if>
+		</where>
+	</select>
+	
+</mapper>
